@@ -20,4 +20,5 @@ def cuadro_matriz_confusion(confusion):
     plt.show()    
     return confusion                       
 
-cuadro_matriz_confusion(np.array([[5, 0], [1, 4]]))
+if __name__ == "__main__":
+    cuadro_matriz_confusion(np.array([[5, 0], [1, 4]]))
