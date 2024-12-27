@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def grafico_correlacion(data: pd.Dataframe):
+def grafico_correlacion(data: pd.DataFrame):
     sns.set_theme(style="white")
 
     data = data.select_dtypes("number")
