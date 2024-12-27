@@ -65,3 +65,18 @@ def rotable_3d(x, col1, col2, col3, cat_col):
 
     # Mostrar el gráfico
     fig.show()
+
+def serie_temporal(df, serie1, serie2):
+    """
+    Dibuja un gráfico interactivo de dos valores de un dataframe con índice temporal
+    """
+    serie1_graf = go.Scatter(x=df[serie1].index, y=df[serie1].values, name = serie1, line=dict(color='royalblue', width=0.7), yaxis='y')
+    serie2_graf = go.Scatter(x=df[serie2].index, y=df[serie2].values, name = serie2, line=dict(color='red', width=0.7), yaxis='y2')
+
+    layout = go.Layout(title='Temperatura y Demanda de energía eléctrica',
+                    xaxis=dict(title='Fecha'), # Eje de tiempo
+                    yaxis  = dict(title=serie1, color='royalblue', overlaying='y2'), # Eje para temperatura
+                    yaxis2 = dict(title=serie2, color='purple', side='right'))  # Eje para demanda
+
+    fig = go.Figure(data=[serie1_graf, serie2_graf], layout=layout)
+    fig.show()
