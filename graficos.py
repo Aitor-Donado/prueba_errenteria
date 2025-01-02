@@ -69,6 +69,7 @@ def rotable_3d(x, col1, col2, col3, cat_col):
 def serie_temporal(df, serie1, serie2):
     """
     Dibuja un gráfico interactivo de dos valores de un dataframe con índice temporal
+    Recibe como parámetros el dataframe y los nombres de las dos columnas
     """
     serie1_graf = go.Scatter(x=df[serie1].index, y=df[serie1].values, name = serie1, line=dict(color='royalblue', width=0.7), yaxis='y')
     serie2_graf = go.Scatter(x=df[serie2].index, y=df[serie2].values, name = serie2, line=dict(color='red', width=0.7), yaxis='y2')
