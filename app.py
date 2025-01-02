@@ -22,7 +22,7 @@ Created on Wed Mar 15 19:53:01 2023
 
 # pip install fastapi
 # pip install uvicorn
-# en linux $ sudo apt-get install uvicorn
+
 # pip freeze > requirements.txt
 
 # Desactivar el entorno virtual
@@ -52,6 +52,9 @@ app = FastAPI()
 
 # uvicorn app:app --reload
 # En el navegador ya estaría funcionando http://127.0.0.1:8000/docs
+
+# Para que sea accesible en toda la wifi
+# uvicorn app:app --host 0.0.0.0 --reload
 
 # Función para guardar datos en un archivo pickle
 def guarda_datos(publicaciones):
