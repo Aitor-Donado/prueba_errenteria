@@ -17,3 +17,18 @@ def cuadro_matriz_confusion(confusion):
     plt.ylabel('Valores reales')
     plt.title('Matriz de confusión')
     plt.show()
+
+def resumen_metricas(confusion):
+    # Calcular las tasas de precisión, sensibilidad, especificidad y valor predictivo positivo
+    total_valores = confusion.sum()
+    accuracy = (confusion[0, 0] + confusion[1, 1]) / total_valores
+    recall = confusion[1, 1] / (confusion[1, 1] + confusion[1, 0])
+    specificity = confusion[0, 0] / (confusion[0, 0] + confusion[0, 1])
+    ppv = confusion[1, 1] / (confusion[1, 1] + confusion[0, 1])
+
+    # Mostrar las tasas de precisión, sensibilidad, especificidad y valor predictivo positivo
+    print("Precisión (Accuracy):", accuracy)
+    print("Sensibilidad (Recall):", recall)
+    print("Especificidad:", specificity)
+    print("Valor Predictivo Positivo (PPV):", ppv, "Porcentaje de predicciones positivas que son reales")
+    return accuracy, recall, specificity, ppv
